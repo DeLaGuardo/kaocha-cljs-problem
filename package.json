@@ -1,0 +1,25 @@
+{
+    "name": "kaocha_cljs_problem",
+    "version": "0.0.0",
+    "description": "",
+    "main": "target/js/min/kaocha_cljs_problem.min.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DeLaGuardo/kaocha_cljs_problem.git"
+    },
+    "author": "DeLaGuardo",
+    "license": "EPL-1.0",
+    "bugs": {
+        "url": "https://github.com/DeLaGuardo/kaocha_cljs_problem/issues"
+    },
+    "homepage": "https://github.com/DeLaGuardo/kaocha_cljs_problem#README.md",
+    "devDependencies": {
+        "ws": "^7.2.1"
+    }
+}

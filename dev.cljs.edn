@@ -1,0 +1,8 @@
+{:output-to "target/public/js/kaocha_cljs_problem.js"
+ :output-dir "target/public/js/out"
+ :optimizations :none
+ :main kaocha-cljs-problem.core
+ :source-map true
+ :source-map-path "target/public/js/kaocha_cljs_problem.js.map"
+ :aot-cache true
+ :compiler-stats true}

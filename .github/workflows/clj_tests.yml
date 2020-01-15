@@ -1,0 +1,71 @@
+name: Run tests
+
+on: push
+
+jobs:
+  cljs-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/setup-java@v1
+      with:
+        java-version: '1.8'
+
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '13.x'
+
+    - uses: DeLaGuardo/setup-clojure@2.0
+      with:
+        tools-deps: latest
+
+    - uses: actions/checkout@v1
+
+    - name: Prepare npm modules for tests
+      run: npm install
+
+    - name: Cache clojure dependencies
+      uses: actions/cache@v1
+      with:
+        path: ~/.m2/repository
+        key: clojure-${{ hashFiles('**/deps.edn') }}
+        restore-keys: |
+          clojure-
+
+    - name: Cache npm dependencies
+      uses: actions/cache@v1
+      with:
+        path: node_modules
+        key: npm-${{ hashFiles('**/package.json') }}
+        restore-keys: |
+          npm-
+
+    - name: Run tests
+      run: |
+        bin/kaocha unit-cljs
+
+  clj-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/setup-java@v1
+      with:
+        java-version: '1.8'
+
+    - uses: DeLaGuardo/setup-clojure@2.0
+      with:
+        tools-deps: latest
+
+    - uses: actions/checkout@v1
+
+    - name: Cache clojure dependencies
+      uses: actions/cache@v1
+      with:
+        path: ~/.m2/repository
+        key: clojure-${{ hashFiles('**/deps.edn') }}
+        restore-keys: |
+          clojure-
+
+    - name: Run tests
+      run: |
+        bin/kaocha unit-clj --plugin cloverage

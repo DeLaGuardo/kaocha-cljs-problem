@@ -1,0 +1,8 @@
+.nrepl-port
+.rebel_readline_history
+.cpcache/
+.clj-kondo/.cache/
+node_modules/
+out/
+target/
+**/.DS_Store

@@ -3,6 +3,7 @@
 .cpcache/
 .clj-kondo/.cache/
 node_modules/
-out/
 target/
+out/
+.cljs_node_repl/
 **/.DS_Store

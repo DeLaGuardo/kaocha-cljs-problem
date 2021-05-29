@@ -20,6 +20,6 @@
     },
     "homepage": "https://github.com/DeLaGuardo/kaocha_cljs_problem#README.md",
     "devDependencies": {
-        "ws": "^7.2.1"
+        "ws": "^7.4.6"
     }
 }
